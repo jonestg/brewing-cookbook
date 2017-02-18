@@ -3,7 +3,7 @@
 import React from 'react';
 import NavBar from 'components/navbar';
 
-export default class ListRecipes extends React.Component {
+export default class Recipes extends React.Component {
   constructor() {
     super();
   }
