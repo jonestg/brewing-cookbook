@@ -2,6 +2,13 @@
 
 import React from 'react';
 import NavBar from 'components/navbar';
+import RecipeList from './recipeList.js';
+
+const recipes = [
+  {name: 'New Blue Moon'},
+  {name: 'FatTire'},
+  {name: 'Prost Weissbier'}
+];
 
 export default class Recipes extends React.Component {
   constructor() {
@@ -12,8 +19,8 @@ export default class Recipes extends React.Component {
     return (
       <div>
         <NavBar title="Brewing Cookbook" />
-        <h1>List Recipes</h1>
+        <RecipeList recipes={recipes}/>
       </div>
-  );
+    );
   }
 }
