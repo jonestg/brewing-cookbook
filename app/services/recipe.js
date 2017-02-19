@@ -1,12 +1,13 @@
 'use strict';
+import Fuse from 'fuse.js';
 
 //For now the exposed functions are just mocked
 
 var recipes = [
-  {name: 'New Blue Moon'},
+  {name: 'Blue Moon'},
   {name: 'FatTire'},
-  {name: 'Prost Weissbier'},
-  {name: 'Prost Altbier'},
+  {name: 'Weissbier'},
+  {name: 'Altbier'},
   {name: 'Corona'},
   {name: 'Guiness'},
   {name: 'Amber'},
@@ -24,14 +25,22 @@ var recipes = [
   }
 ];
 
+var fuse = new Fuse(recipes, {
+  keys: ["name"]
+});
+
 var externalApi = {
   getRecipes: getRecipes
 }
 
 export default externalApi;
 
-function getRecipes() {
+function getRecipes(searchTerms) {
   return new Promise((resolve) => {
-    resolve(recipes);
+    if(searchTerms){
+      resolve(fuse.search(searchTerms));
+    } else {
+      resolve(recipes);
+    }
   });
 }
