@@ -30,7 +30,8 @@ var fuse = new Fuse(recipes, {
 });
 
 var externalApi = {
-  getRecipes: getRecipes
+  getRecipes: getRecipes,
+  addRecipe: addRecipe
 }
 
 export default externalApi;
@@ -42,5 +43,12 @@ function getRecipes(searchTerms) {
     } else {
       resolve(recipes);
     }
+  });
+}
+
+function addRecipe(recipe) {
+  return new Promise((resolve) => {
+    console.log('recipe submitted: ', recipe);
+    resolve();
   });
 }
