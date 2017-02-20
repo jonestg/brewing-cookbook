@@ -6,6 +6,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 
+import IngredientForm from './ingredientForm';
+
 import recipeService from 'services/recipe';
 
 const styles = {
@@ -80,6 +82,7 @@ export default class CreateRecipe extends React.Component {
               style={{maxWidth: '400px'}}
               fullWidth={true}
               multiLine={true}/>
+            <IngredientForm />
             <div style={{
               display: 'flex',
               justifyContent:'center'}}>
