@@ -13,8 +13,8 @@
     "fuse.js": "^2.6.1",
     "html-webpack-plugin": "^2.28.0",
     "material-ui": "^0.17.0",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
+    "react": "15",
+    "react-dom": "15",
     "react-router": "^3.0.2",
     "react-tap-event-plugin": "^2.0.1"
   },
