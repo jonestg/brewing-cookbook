@@ -2,10 +2,6 @@
 'use strict';
 import Fuse from 'fuse.js';
 
-var fuse = new Fuse(recipes, {
-  keys: ["name"]
-});
-
 var ingredients = [
   {id: 0, name: 'hops'},
   {id: 1, name: 'barley'},
@@ -13,6 +9,10 @@ var ingredients = [
   {id: 3, name: 'malt'},
   {id: 4, name: 'yeast'}
 ];
+
+var fuse = new Fuse(ingredients, {
+  keys: ["name"]
+});
 
 var externalApi = {
   getIngredients: getIngredients
