@@ -41,7 +41,8 @@ export default class CreateRecipe extends React.Component {
   handleSubmit() {
     const recipe = {
       name: this.state.recipeName,
-      description: this.state.description
+      description: this.state.description,
+      ingredients: this.state.ingredients
     };
     recipeService.addRecipe(recipe)
       .then(() => console.log('success'))
@@ -57,6 +58,10 @@ export default class CreateRecipe extends React.Component {
     this.setState({
       [name]: value
     });
+  }
+
+  updateIngredients(ingredients) {
+    this.setState({ingredients});
   }
 
   render() {
@@ -82,7 +87,7 @@ export default class CreateRecipe extends React.Component {
               style={{maxWidth: '400px'}}
               fullWidth={true}
               multiLine={true}/>
-            <IngredientForm />
+            <IngredientForm onIngredientsUpdate={this.updateIngredients.bind(this)}/>
             <div style={{
               display: 'flex',
               justifyContent:'center'}}>

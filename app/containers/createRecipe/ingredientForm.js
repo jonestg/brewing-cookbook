@@ -30,12 +30,17 @@ const styles = {
 }
 
 export default class IngredientForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    if(Array.isArray(this.props.ingredients)) {
+      var ingredients = this.props.ingredients.slice();
+    } else {
+      var ingredients = [];
+    }
     this.state = {
       ingredientName: '',
       ingredientAmount: '',
-      ingredients: [{name: 'testName', amount:'testAmount'}]
+      ingredients
     };
   }
 
@@ -45,6 +50,9 @@ export default class IngredientForm extends React.Component {
       amount: this.state.ingredientAmount
     };
     const ingredients = [...this.state.ingredients, ingredient];
+    if(typeof this.props.onIngredientsUpdate == 'function') {
+      this.props.onIngredientsUpdate(ingredients);
+    }
     this.setState({
       ingredientName: '',
       ingredientAmount: '',
