@@ -1,8 +1,6 @@
 'use strict';
 import Fuse from 'fuse.js';
 
-//For now the exposed functions are just mocked
-
 var recipes = [
   {name: 'Blue Moon'},
   {name: 'FatTire'},

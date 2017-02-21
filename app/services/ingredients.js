@@ -1,3 +1,4 @@
+//An Ingredient service mocking server responses
 'use strict';
 import Fuse from 'fuse.js';
 
