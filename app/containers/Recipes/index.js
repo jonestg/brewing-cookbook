@@ -3,6 +3,7 @@
 import React from 'react';
 import NavBar from 'components/navbar';
 import RecipeList from './recipeList.js';
+import PaperLayout from 'components/paperLayout';
 import TextField from 'material-ui/TextField';
 
 import recipeService from 'services/recipe.js';
@@ -26,13 +27,14 @@ export default class Recipes extends React.Component {
     const recipes = this.state.recipes.slice();
     return (
       <div>
-        <NavBar title="Brewing Cookbook" />
-        <TextField
-          onChange={this.handleSearchChange.bind(this)}
-          id="recipeSearch"
-          hintText="Search"
-        />
-        <RecipeList recipes={recipes}/>
+        <PaperLayout title="Brewing Cookbook">
+          <TextField
+            onChange={this.handleSearchChange.bind(this)}
+            id="recipeSearch"
+            hintText="Search"
+          />
+          <RecipeList recipes={recipes}/>
+        </PaperLayout>
       </div>
     );
   }

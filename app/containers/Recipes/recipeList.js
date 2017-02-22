@@ -11,7 +11,7 @@ const styles = {
   recipeCard: {
     width: '150px',
     height: '150px',
-    background: 'deepskyblue',
+    background: 'Gray',
     color: 'white',
     margin: '5px',
     padding: '10px',
