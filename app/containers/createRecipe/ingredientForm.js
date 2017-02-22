@@ -92,11 +92,8 @@ export default class IngredientForm extends React.Component {
       const ingredient = {name: chosenRequest};
       this.setState({ingredient});
     } else {
-      //chosenRequest is the ingredient Id
-      const ingredient = this.state.ingredientList.find((ingredient) => {
-        return ingredient.id === chosenRequest;
-      });
-      this.setState({ingredient});
+      //chosenRequest is the ingredient
+      this.setState({ingredient: chosenRequest});
     }
   }
 
@@ -130,7 +127,7 @@ export default class IngredientForm extends React.Component {
             style={styles.amountColumn}/>
         </div>
         {ingredients.map((ingredientItem) => (
-          <div style={styles.ingredientRow}>
+          <div key={ingredientItem.ingredient.name} style={styles.ingredientRow}>
             <div style={styles.addColumn}></div>
             <div style={styles.nameColumn}>{ingredientItem.ingredient.name}</div>
             <div style={styles.amountColumn}>{ingredientItem.amount}</div>
