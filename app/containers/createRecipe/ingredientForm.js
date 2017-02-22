@@ -23,13 +23,14 @@ const styles = {
     width: '100%',
     flexWrap: 'no-wrap',
     flexDirection: 'row',
-    alignItems: 'baseline'
+    alignItems: 'baseline',
+    marginTop: '10px'
   },
   addColumn: {
     width: '50px'
   },
   nameColumn: {
-    width: '200px',
+    width: '270px',
     marginRight: '10px'
   },
   amountColumn: {
